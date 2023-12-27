@@ -1,0 +1,112 @@
+*{
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+
+}
+
+@import "features.scss";
+@import "header.scss";
+@import "login.scss";
+@import "mediaquery.scss";
+
+a {
+    text-decoration: none;
+    color: rgb(60, 99, 3);
+}
+
+.home{
+    text-align: center;
+    background-color: gainsboro;
+    .heading{
+        @include styledText(2rem,100,uppercase);
+        padding-top: 10vmax;
+    }
+
+    p {
+        margin: 2rem 0;
+        font-weight: 900;
+    }
+}
+
+.todosContainer {
+    @include flexBox(column, center, flex-start);
+    @include fill;
+    @include container(900px, unset,3rem 0);
+}
+
+.todo {
+    background-color: $color2;
+    border-radius: 5px;
+    @include flexBox(row, center, space-between);
+    width: 100%;
+    padding: 2rem;
+    >div:last-of-type {
+        @include flexBox(row);
+    }
+    input {
+        width :2rem;
+        height: 2rem;
+    }
+}
+
+.loader {
+    @include defaultStyle;
+    @include flexBox(column, center, center);
+    @include styledText(2rem, 100, uppercase);
+    overflow-x: hidden;
+    width: 100vw;
+
+}
+
+.btn {
+    color: white;
+    font-size: 5.5mm;
+    @include myButton;
+}
+
+.btn-login {
+    background-color: rgb(74, 74, 238);
+}
+.done{
+    background-color: rgb(129, 231, 129);
+}
+.yet{
+    background-color: beige;
+}
+.btn-remove{
+    background-color: rgb(236, 49, 49);
+}
+
+
+.img {
+    height: 10mm;
+    width: 10mm;
+    &:hover{
+        cursor: pointer;
+    }
+}
+
+.user-container{
+    @include flexBox(column,center,flex-start);
+    @include fill;
+    @include container(900px,unset,3rem 0 );
+    background-color: beige;
+}
+
+.user-name{
+        padding: 0.5rem 0.15rem;
+        background-color:  rgb(51,51,51);;
+        border: rgb(51,51,51);
+        text-transform: uppercase;
+        color: white;
+}
+
+.logo{
+    height: 1.5cm;
+    width: 1.5cm;
+    border-radius: 2rem;
+}
